@@ -1,0 +1,27 @@
+gestão de veículos
+	-registar veiculos
+		-inserir  matrícula, marca, modelo, anterior dono, nº de donos, características do veículo, acidentes(sim ou não)
+
+gestão de peças
+	-registar peça
+		-cada peça: 
+			-nome, a que veiculo pertence, referencia, o numero de peças na filial e na sede
+			deve deter o numero de unidades minima ou quantidade minima em stock por filial/sede !o nº deve ser sempre maior na sede !pode haver pedido depeças entre sede e filiais  
+	-visualizar as peças por local(sede, filiais)
+
+gestão de eventos
+	-registar um evento
+		- se o evento se realiza numa filial ou fora de uma filial, informações sobre o local de exposição, data de início e data de fim , nº de veículos em exposição e quais os veiculos em exposição 
+gestão de transações
+	-registar transações de venda e compra de veiculos a clientes
+	!Os preços de compra e venda por parte do stand baseiam-se nos valores de referência de sites como o VolanteSic mas também na condição geral do veículo;
+gestão de clientes
+	-registar todas as informações sobre os clientes que participam na compra e na venda de veiculos
+		!o sistema deve permitir a visualização do histórico de transações efetuadas por cada cliente
+gestão de estatísticas
+	-mostrar estatisticas do negócio
+		-marcas e modelos mais vendidos ao longo do tempo no total e por filial
+		-os melhores clientes
+		-melhore filiais e feiras
+		-os modelos e marcas que sofreram mais investimento a nivél de peças e reparações
+		- etc
