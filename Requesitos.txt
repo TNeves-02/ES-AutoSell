@@ -1,0 +1,57 @@
+APP: AutoSell
+
+Requesitos:
+
+    --> Gestão de veiculos
+            --> Registar veículos (matrícula, marca, modelo, anterior dono, nº de donos, características do veículo, acidentes(sim ou não) );
+            --> Remover veículos (venda de carro);
+            --> Visualizar veiculos (Filtrar por filial,etc);
+            --> Reservar veiculo (duração);
+    
+    --> Gestão de peças
+            --> Registar peça (-nome, a que veiculo pertence, referencia, o numero de peças na filial e na sede
+			                deve deter o numero de unidades minima ou quantidade minima em stock por filial/sede); 
+            --> Remover peças (defeito/utilização);
+            --> Visualizar peças
+
+    --> Gestão de eventos
+            --> Registar eventos (se é num filial ou feira, o local de exposição, data de início e data de fim ,
+                                 nº de veículos em exposição e quais os veiculos em exposição)                
+            --> visualização de histórico de eventos
+
+    --> Gestão de transações
+            --> Registar transações de venda e compra de veiculos a clientes(retoma ou não);
+            --> visualização de histórico de transações;
+    
+    --> Gestão de clientes
+            --> Registar novo cliente (momento de compra/reserva)(nome,data de nascimento,etc)
+            --> Visualizar clientes;
+            --> Alterar dados dos clientes;
+            --> Visualizar histórico de transações efetuadas por cada cliente;
+
+    --> Gestão de estatisticas
+            --> mostrar estatisticas do negócio
+		            - marcas e modelos mais vendidos ao longo do tempo no total e por filial
+		            - os melhores clientes
+		            - melhore filiais e feiras
+		            - os modelos e marcas que sofreram mais investimento a nivél de peças e reparações
+		            - etc
+
+    --> Gestão de filiais (Exclusivo SEDE)
+            --> Regsitar Filiais (Localização, Morada, Gerente)
+            --> Eliminar Filiais
+            --> Atualizar Gerente
+            --> Visualizar Filiais
+
+
+
+
+
+
+
+
+
+
+
+
+
