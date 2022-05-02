@@ -4,7 +4,6 @@ Requesitos:
 
     --> Gestão de veiculos
             --> Registar veículos (matrícula, marca, modelo, anterior dono, nº de donos, características do veículo, acidentes(sim ou não) );
-            --> Remover veículos (venda de carro);
             --> Visualizar veiculos (Filtrar por filial,etc);
             --> Reservar veiculo (duração);
     
