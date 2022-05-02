@@ -1,0 +1,12 @@
+APP: AutoSell
+
+    --> Gestão de veiculos --> D
+    --> Gestão de peças --> T
+    --> Gestão de eventos --> R
+    --> Gestão de transações --> R
+    --> Gestão de clientes --> T
+    --> Gestão de estatisticas --> D
+    --> Gestão de filiais (Exclusivo SEDE) --> T
+    --> Menus Principal --> R
+
+--> Link Figma: https://www.figma.com/file/05Rt1BWSjpps0oaTXTIr1z/AutoSell?node-id=0%3A1
