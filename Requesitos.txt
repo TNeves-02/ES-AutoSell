@@ -3,7 +3,7 @@ APP: AutoSell
 Requesitos:
 
     --> Gestão de veiculos
-            --> Registar veículos (matrícula, marca, modelo, anterior dono, nº de donos, características do veículo, acidentes(sim ou não) );
+            --> Registar veículos (matrícula, marca, modelo, anterior dono, nº de donos, características do veículo, acidentes(sim ou não));
             --> Visualizar veiculos (Filtrar por filial,etc);
             --> Reservar veiculo (duração);
     
@@ -41,6 +41,10 @@ Requesitos:
             --> Eliminar Filiais
             --> Atualizar Gerente
             --> Visualizar Filiais
+
+
+     --> Manutenção 
+     --> Utilizadores
 
 
 
