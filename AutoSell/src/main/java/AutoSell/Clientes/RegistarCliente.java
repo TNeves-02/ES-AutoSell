@@ -16,7 +16,7 @@ import javax.swing.*;
 public class RegistarCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Clientes
+     * Creates new form RegistarCliente
      */
     public RegistarCliente() {
         initComponents();

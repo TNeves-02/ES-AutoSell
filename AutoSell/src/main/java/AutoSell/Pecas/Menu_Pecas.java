@@ -14,7 +14,7 @@ import  main.java.AutoSell.Pecas.VisualizarPecas;
 public class Menu_Pecas extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Clientes
+     * Creates new form Menu_Pecas
      */
     public Menu_Pecas() {
         initComponents();

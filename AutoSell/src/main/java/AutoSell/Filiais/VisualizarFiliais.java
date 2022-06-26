@@ -24,7 +24,7 @@ import java.util.List;
 public class VisualizarFiliais extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Clientes
+     * Creates new form VisualizarFiliais
      */
     public VisualizarFiliais() {
         initComponents();

@@ -22,7 +22,7 @@ import AutoSell.Manutencoes.Menu_Manutencoes;
 public class MenuPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form AutoSell
+     * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();

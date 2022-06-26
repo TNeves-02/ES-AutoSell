@@ -15,7 +15,7 @@ import javax.swing.*;
 public class VisualizarFilial extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Clientes
+     * Creates new form VisualizarFilial
      */
     public VisualizarFilial(String nome, String telefone, String email, String morada,String codPost,String gerente) {
         initComponents();

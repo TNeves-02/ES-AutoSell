@@ -15,7 +15,7 @@ import javax.swing.*;
 public class FiltrarFiliais extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Clientes
+     * Creates new form FiltrarFiliais
      */
     public FiltrarFiliais() {
         initComponents();

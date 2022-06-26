@@ -22,7 +22,7 @@ import java.util.List;
 public class EditarPeca extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Clientes
+     * Creates new form EditarPeca
      */
     List<Veiculo> veiculos =DadosAplicacao.INSTANCE.getVeiculos();
 

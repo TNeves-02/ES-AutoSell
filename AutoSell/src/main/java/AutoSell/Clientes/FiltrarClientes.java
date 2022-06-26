@@ -6,7 +6,6 @@ package main.java.AutoSell.Clientes;
 
 
 
-import main.java.AutoSell.Filiais.*;
 import javax.swing.*;
 
 /**
@@ -16,7 +15,7 @@ import javax.swing.*;
 public class FiltrarClientes extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Clientes
+     * Creates new form FiltrarClientes
      */
     public FiltrarClientes() {
         initComponents();

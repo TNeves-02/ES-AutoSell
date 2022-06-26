@@ -6,9 +6,6 @@ package main.java.AutoSell.Pecas;
 
 
 
-import main.java.AutoSell.Filiais.*;
-import javax.swing.*;
-
 /**
  *
  * @author Tomas
@@ -16,7 +13,7 @@ import javax.swing.*;
 public class FiltrarPecas extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Clientes
+     * Creates new form FiltarPecas
      */
     public FiltrarPecas() {
         initComponents();

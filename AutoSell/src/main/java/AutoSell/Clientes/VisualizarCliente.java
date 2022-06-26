@@ -15,7 +15,7 @@ import javax.swing.*;
 public class VisualizarCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Clientes
+     * Creates new form VisualizarCliente
      */
     public VisualizarCliente(String nome, String telefone, String email,String nif, String morada,String codPost) {
         initComponents();

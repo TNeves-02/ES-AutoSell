@@ -22,7 +22,7 @@ import java.util.List;
 public class VisualizarPeca extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Clientes
+     * Creates new form VisualizarPeca
      */
 
 

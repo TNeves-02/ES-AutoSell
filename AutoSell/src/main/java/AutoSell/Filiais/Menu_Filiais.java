@@ -14,7 +14,7 @@ import main.java.AutoSell.Filiais.RegistarFilial;
 public class Menu_Filiais extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Clientes
+     * Creates new form Menu_Filiais
      */
     public Menu_Filiais() {
         initComponents();

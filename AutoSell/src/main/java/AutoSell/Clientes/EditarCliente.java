@@ -16,7 +16,7 @@ import javax.swing.*;
 public class EditarCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu_Clientes
+     * Creates new form EditarCliente
      */
     public EditarCliente(String nome, String telefone, String email,String nif, String morada,String codPost1,String codPost2,String codPost3) {
         initComponents();
