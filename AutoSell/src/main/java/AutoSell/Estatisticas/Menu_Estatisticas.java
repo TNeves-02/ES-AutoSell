@@ -50,7 +50,7 @@ public class Menu_Estatisticas extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Gestão de Manutenções");
+        jLabel1.setText("Gestão Estatísticas");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel1.setOpaque(true);
 
@@ -67,8 +67,9 @@ public class Menu_Estatisticas extends javax.swing.JFrame {
         btnEstatisticasMarca.setBackground(new java.awt.Color(0, 0, 0));
         btnEstatisticasMarca.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnEstatisticasMarca.setForeground(new java.awt.Color(255, 255, 255));
-        btnEstatisticasMarca.setText("Marcas mais vendidas");
+        btnEstatisticasMarca.setText("<html>Marcas<br>mais<br>vendidas</html>");
         btnEstatisticasMarca.setToolTipText("");
+        btnEstatisticasMarca.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEstatisticasMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEstatisticaMarcaActionPerformed(evt);
@@ -80,6 +81,8 @@ public class Menu_Estatisticas extends javax.swing.JFrame {
         btnEstatisticasClientes.setForeground(new java.awt.Color(255, 255, 255));
         btnEstatisticasClientes.setText("Clientes");
         btnEstatisticasClientes.setToolTipText("");
+        btnEstatisticasClientes.setMaximumSize(new java.awt.Dimension(2147483647, 90));
+        btnEstatisticasClientes.setMinimumSize(new java.awt.Dimension(134, 90));
         btnEstatisticasClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEstatisticasClientesActionPerformed(evt);
@@ -89,8 +92,10 @@ public class Menu_Estatisticas extends javax.swing.JFrame {
         btnEstatisticasFiliais.setBackground(new java.awt.Color(0, 0, 0));
         btnEstatisticasFiliais.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnEstatisticasFiliais.setForeground(new java.awt.Color(255, 255, 255));
-        btnEstatisticasFiliais.setText("Melhores Filiais");
+        btnEstatisticasFiliais.setText("<html>Melhores<br>Filiais</html>");
         btnEstatisticasFiliais.setToolTipText("");
+        btnEstatisticasFiliais.setMaximumSize(new java.awt.Dimension(2147483647, 90));
+        btnEstatisticasFiliais.setMinimumSize(new java.awt.Dimension(134, 90));
         btnEstatisticasFiliais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEstatisticasFiliaisActionPerformed(evt);
@@ -100,8 +105,10 @@ public class Menu_Estatisticas extends javax.swing.JFrame {
         btnEstatisticasFeiras.setBackground(new java.awt.Color(0, 0, 0));
         btnEstatisticasFeiras.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnEstatisticasFeiras.setForeground(new java.awt.Color(255, 255, 255));
-        btnEstatisticasFeiras.setText("Melhores Feiras");
+        btnEstatisticasFeiras.setText("<html>Melhores<br>Feiras</html>");
         btnEstatisticasFeiras.setToolTipText("");
+        btnEstatisticasFeiras.setMaximumSize(new java.awt.Dimension(2147483647, 90));
+        btnEstatisticasFeiras.setMinimumSize(new java.awt.Dimension(134, 90));
         btnEstatisticasFeiras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEstatisticasFeirasActionPerformed(evt);
@@ -113,18 +120,21 @@ public class Menu_Estatisticas extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(btnEstatisticasMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnEstatisticasClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnEstatisticasFiliais, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnEstatisticasFeiras, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnEstatisticasMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEstatisticasClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEstatisticasFiliais, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEstatisticasFeiras, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
-                    .addComponent(btnVoltarMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnVoltarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)))
                 .addGap(15, 15, 15))
         );
         jPanel1Layout.setVerticalGroup(
@@ -133,12 +143,12 @@ public class Menu_Estatisticas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEstatisticasMarca, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                    .addComponent(btnEstatisticasClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                    .addComponent(btnEstatisticasFiliais, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                    .addComponent(btnEstatisticasFeiras, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEstatisticasMarca, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+                    .addComponent(btnEstatisticasClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEstatisticasFiliais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEstatisticasFeiras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(7, 7, 7)
                 .addComponent(btnVoltarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -151,7 +161,7 @@ public class Menu_Estatisticas extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

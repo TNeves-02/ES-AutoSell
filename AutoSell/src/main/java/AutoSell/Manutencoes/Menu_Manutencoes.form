@@ -124,8 +124,12 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt; Registar &lt;br&gt; Manuten&#xe7;&#xe3;o&lt;/html&gt;"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="actionCommand" type="java.lang.String" value="&lt;html&gt;Registar&lt;br&gt;Manuten&#xe7;&#xe3;o&lt;/html&gt;"/>
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[184, 62]"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistarManutencaoActionPerformed"/>
@@ -144,6 +148,10 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt; Dar In&#xed;cio a &lt;br&gt; Prepara&#xe7;&#xe3;o de Ve&#xed;culo&lt;/html&gt;&#xa;"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="actionCommand" type="java.lang.String" value="&lt;html&gt;Dar In&#xed;cio a&lt;br&gt;Prepara&#xe7;&#xe3;o de Ve&#xed;culo&lt;/html&gt;&#xa;"/>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[184, 62]"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistarPreparacaoActionPerformed"/>

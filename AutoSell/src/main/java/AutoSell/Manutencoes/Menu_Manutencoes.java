@@ -70,8 +70,10 @@ public class Menu_Manutencoes extends javax.swing.JFrame {
         btnRegistarVeiculos.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistarVeiculos.setText("<html> Registar <br> Manutenção</html>");
         btnRegistarVeiculos.setToolTipText("");
+        btnRegistarVeiculos.setActionCommand("<html>Registar<br>Manutenção</html>");
         btnRegistarVeiculos.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         btnRegistarVeiculos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRegistarVeiculos.setMinimumSize(new java.awt.Dimension(184, 62));
         btnRegistarVeiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistarManutencaoActionPerformed(evt);
@@ -83,6 +85,8 @@ public class Menu_Manutencoes extends javax.swing.JFrame {
         btnRegistarVeiculos2.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistarVeiculos2.setText("<html> Dar Início a <br> Preparação de Veículo</html>\n");
         btnRegistarVeiculos2.setToolTipText("");
+        btnRegistarVeiculos2.setActionCommand("<html>Dar Início a<br>Preparação de Veículo</html>\n");
+        btnRegistarVeiculos2.setMinimumSize(new java.awt.Dimension(184, 62));
         btnRegistarVeiculos2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistarPreparacaoActionPerformed(evt);
@@ -124,9 +128,9 @@ public class Menu_Manutencoes extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnRegistarVeiculos2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRegistarVeiculos2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRegistarVeiculos3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                    .addComponent(btnRegistarVeiculos))
+                    .addComponent(btnRegistarVeiculos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnVoltarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
