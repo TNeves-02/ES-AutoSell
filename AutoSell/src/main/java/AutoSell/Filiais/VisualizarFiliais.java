@@ -176,14 +176,12 @@ public class VisualizarFiliais extends javax.swing.JFrame {
                 int row = table.rowAtPoint(point);
                 if (mouseEvent.getClickCount() == 2 && table.getSelectedRow() != -1) {
                     if (table.getSelectedColumn() >=0 && table.getSelectedColumn() <=4){
-                        System.out.println("Visualizar");
                          VisualizarFilial janela = new VisualizarFilial(filiais.get(row).getNome(),filiais.get(row).getTelefone(),filiais.get(row).getEmail(),filiais.get(row).getMorada(),filiais.get(row).codPostal,filiais.get(row).gerente);
                         janela.setVisible(true);
                     }
                     if (table.getSelectedColumn() == 5 ){
                         int reply = JOptionPane.showConfirmDialog(null, "Deseja Eliminar?", "Eliminar", JOptionPane.YES_NO_OPTION);
                         if (reply == JOptionPane.YES_OPTION) {
-                            System.out.println("Eliminar");
                             DadosAplicacao.INSTANCE.eliminarFilial(row);
                         }
                     }

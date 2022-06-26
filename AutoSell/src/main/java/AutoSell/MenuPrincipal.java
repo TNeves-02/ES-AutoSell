@@ -4,6 +4,10 @@ package main.java.AutoSell;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import AutoSell.Clientes.Cliente;
+import AutoSell.DadosAplicacao;
+import AutoSell.Filiais.Filial;
+import AutoSell.Veiculos.Veiculo;
 import main.java.AutoSell.Clientes.Menu_Clientes;
 import main.java.AutoSell.Pecas.Menu_Pecas;
 import main.java.AutoSell.Filiais.Menu_Filiais;
@@ -291,7 +295,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        Cliente cliente1 = new Cliente("Tomás Neves","9669999999","2201747@my.ipleiria.pt","9999999990","R.Louriçal","3105-170 Louriçal");
+        Cliente cliente2 = new Cliente("David Marques","9669555555","2201748@my.ipleiria.pt","153757701","R.Matas","3050-200 Matas");
+        Cliente cliente3 = new Cliente("Rodrigo Domingues","966966666","2191173@my.ipleiria.pt","259376566","R.Leiria","3100-100 Leiria");
+        Filial filial1 = new Filial("Auto Pombal","964444444","autoPombal@gmail.com","R.Pombal","3400-140 Pombal","Manuel António");
+        Filial filial2 = new Filial("Auto Figueira","967575758","autoFigueira@gmail.com","R.Figueira","3759-042 Figueira","José Manuel");
+        Veiculo veiculo1 = new Veiculo("10-ZE-20","Golf","Volkswagen","José Manuel",2,"Gasóleo",false,"");
+        Veiculo veiculo2 = new Veiculo("25-XX-10","Caddy","Volkswagen","José António",1,"Gasolina",false,"");
+        Veiculo veiculo3 = new Veiculo("00-AA-00","Ibiza","Seat","Manuel António",5,"Gasóleo",true,"");
+        DadosAplicacao.INSTANCE.adicionarCliente(cliente1);
+        DadosAplicacao.INSTANCE.adicionarCliente(cliente2);
+        DadosAplicacao.INSTANCE.adicionarCliente(cliente3);
+        DadosAplicacao.INSTANCE.adicionarFilial(filial1);
+        DadosAplicacao.INSTANCE.adicionarFilial(filial2);
+        DadosAplicacao.INSTANCE.adicionarVeiculo(veiculo1);
+        DadosAplicacao.INSTANCE.adicionarVeiculo(veiculo2);
+        DadosAplicacao.INSTANCE.adicionarVeiculo(veiculo3);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

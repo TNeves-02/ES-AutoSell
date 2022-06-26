@@ -4,6 +4,7 @@
  */
 package main.java.AutoSell.Pecas;
 
+import main.java.AutoSell.Pecas.RegistarPeca;
 import  main.java.AutoSell.Pecas.VisualizarPecas;
 
 /**
@@ -120,7 +121,8 @@ public class Menu_Pecas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistarPecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistarPecaActionPerformed
-        // TODO add your handling code here:
+        RegistarPeca janela = new RegistarPeca();
+        janela.setVisible(true);
     }//GEN-LAST:event_btnRegistarPecaActionPerformed
 
     private void btnVisualizarPecasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarPecasActionPerformed

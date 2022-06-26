@@ -2,6 +2,8 @@ package AutoSell;
 
 import AutoSell.Clientes.Cliente;
 import AutoSell.Filiais.Filial;
+import AutoSell.Pecas.Peca;
+import AutoSell.Veiculos.Veiculo;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -12,10 +14,28 @@ public class DadosAplicacao {
 
     private final LinkedList<Cliente> clientes;
     private final LinkedList<Filial> filiais;
+    private final LinkedList<Veiculo> veiculos;
+    private final LinkedList<Peca> pecas;
+
+
 
     public DadosAplicacao() {
         clientes = new LinkedList<>();
         filiais = new LinkedList<>();
+        veiculos = new LinkedList<>();
+        pecas = new LinkedList<>();
+    }
+
+    //////////////////////////////////Veiculos///////////////////////////////////////
+    public LinkedList<Veiculo> getVeiculos() {
+        return veiculos;
+    }
+    public boolean adicionarVeiculo(Veiculo veiculo){
+        if(veiculo == null || veiculos.contains(veiculo)){
+            return false;
+        }
+        veiculos.add(veiculo);
+        return true;
     }
 
     //////////////////////////////////Clientes///////////////////////////////////////
@@ -94,5 +114,22 @@ public class DadosAplicacao {
             }
         }
         return true;
+    }
+    /////////////////////////////////Peças//////////////////////////////////
+    public boolean adicionarPeca(Peca peca) {
+        if(peca == null || pecas.contains(peca)){
+            return false;
+        }
+        for (Peca peca1 : pecas) {
+            if (peca1.getReferencia().equals(peca.getReferencia())) {
+                return false;
+            }
+        }
+        pecas.add(peca);
+        return true;
+    }
+
+    public LinkedList<Peca> getPecas() {
+        return new LinkedList<>(pecas);
     }
 }
