@@ -7,7 +7,9 @@ package main.java.AutoSell;
 import main.java.AutoSell.Clientes.Menu_Clientes;
 import main.java.AutoSell.Pecas.Menu_Pecas;
 import main.java.AutoSell.Filiais.Menu_Filiais;
-
+import AutoSell.Veiculos.Menu_Veiculos;
+import main.java.AutoSell.Estatisticas.Menu_Estatisticas;
+import AutoSell.Manutencoes.Menu_Manutencoes;
 /**
  *
  * @author Tom�s
@@ -225,7 +227,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnEstatisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstatisticasActionPerformed
-        // TODO add your handling code here:
+        Menu_Estatisticas janela = new Menu_Estatisticas();
+        janela.setVisible(true);
     }//GEN-LAST:event_btnEstatisticasActionPerformed
 
     private void btnFiliaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiliaisActionPerformed
@@ -242,11 +245,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTransacoesActionPerformed
 
     private void btnManutencaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManutencaoActionPerformed
-        // TODO add your handling code here:
+        Menu_Manutencoes janela = new Menu_Manutencoes();
+        janela.setVisible(true);
     }//GEN-LAST:event_btnManutencaoActionPerformed
 
     private void btnVeiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVeiculosActionPerformed
-        // TODO add your handling code here:
+        Menu_Veiculos janela =  new Menu_Veiculos();
+        janela.setVisible(true);
     }//GEN-LAST:event_btnVeiculosActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
