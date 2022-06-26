@@ -19,23 +19,56 @@ import java.util.List;
  *
  * @author Tomás
  */
-public class RegistarPeca extends javax.swing.JFrame {
+public class EditarPeca extends javax.swing.JFrame {
 
     /**
      * Creates new form Menu_Clientes
      */
     List<Veiculo> veiculos =DadosAplicacao.INSTANCE.getVeiculos();
 
-    public RegistarPeca() {
+    public EditarPeca(String ref, String nome, String marca, String quantSede,String quantFilial,String veiculo_Marca,String veiculo_Modelo) {
         initComponents();
-
         List<String> aux = new LinkedList<>();
         for (Veiculo veiculo : veiculos) {
-                if (!aux.contains(veiculo.marca)) {
-                    aux.add(veiculo.marca);
-                    veiculoMarca.addItem(veiculo.marca);
-                }
+            if (!aux.contains(veiculo.marca)) {
+                aux.add(veiculo.marca);
+                veiculoMarca.addItem(veiculo.marca);
+            }
         }
+        txtNome.setText(nome);
+        txtRef.setText(ref);
+        txtMarca.setText(marca);
+        if (!quantSede.equals("0")){
+            int quant_Sede = Integer.parseInt(quantSede.split("/")[0]);
+            txtQuantidade.setValue(quant_Sede);
+            destino1.setSelectedIndex(1);
+            destino2.setSelectedIndex(1);
+        }
+        if (!quantFilial.equals("0")){
+            int quant_Filial = Integer.parseInt(quantFilial.split("/")[0]);
+            txtQuantidade.setValue(quant_Filial);
+            destino1.setSelectedIndex(2);
+
+            for (int i = 1; i < destino2.getItemCount(); i++) {
+                if (destino2.getItemAt(i).equals(quantFilial.split("/")[1])){
+                    destino2.setSelectedIndex(i);
+                }
+            }
+
+        }
+        for (int k = 1; k < veiculoMarca.getItemCount(); k++) {
+            if (veiculoMarca.getItemAt(k).equals(veiculo_Marca)){
+                veiculoMarca.setSelectedIndex(k);
+            }
+        }
+        for (int j = 1; j < veiculoModelo.getItemCount(); j++) {
+            if (veiculoModelo.getItemAt(j).equals(veiculo_Modelo)){
+                veiculoModelo.setSelectedIndex(j);
+            }
+        }
+
+
+
     }
 
     /**
@@ -51,7 +84,6 @@ public class RegistarPeca extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnFechar = new javax.swing.JButton();
-        btnRegistar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -68,6 +100,7 @@ public class RegistarPeca extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         veiculoModelo = new javax.swing.JComboBox<>();
         txtQuantidade = new javax.swing.JSpinner();
+        btnConfirmar = new javax.swing.JButton();
 
         setResizable(false);
         setSize(new java.awt.Dimension(600, 400));
@@ -76,7 +109,7 @@ public class RegistarPeca extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Registar Peça");
+        jLabel1.setText("Editar Peça");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel1.setOpaque(true);
 
@@ -89,16 +122,6 @@ public class RegistarPeca extends javax.swing.JFrame {
         btnFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFecharActionPerformed(evt);
-            }
-        });
-
-        btnRegistar.setBackground(new java.awt.Color(0, 0, 0));
-        btnRegistar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnRegistar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistar.setText("Registar");
-        btnRegistar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistarActionPerformed(evt);
             }
         });
 
@@ -130,7 +153,6 @@ public class RegistarPeca extends javax.swing.JFrame {
         });
 
         destino2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Destino--" }));
-        destino2.setEnabled(false);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,9 +174,18 @@ public class RegistarPeca extends javax.swing.JFrame {
         jLabel11.setText("Modelo:");
 
         veiculoModelo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Modelo--" }));
-        veiculoModelo.setEnabled(false);
 
         txtQuantidade.setMinimumSize(new java.awt.Dimension(70, 22));
+
+        btnConfirmar.setBackground(new java.awt.Color(0, 0, 0));
+        btnConfirmar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConfirmar.setText("Confirmar");
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -180,7 +211,7 @@ public class RegistarPeca extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(veiculoModelo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(veiculoModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
@@ -199,9 +230,9 @@ public class RegistarPeca extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(destino2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnRegistar, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(12, 12, 12)
+                        .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -238,9 +269,9 @@ public class RegistarPeca extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(veiculoModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -285,7 +316,47 @@ public class RegistarPeca extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFecharActionPerformed
 
     
-    private void btnRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistarActionPerformed
+    private void destino1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_destino1ActionPerformed
+        if (destino1.getSelectedIndex() == 1){
+            destino2.setEnabled(true);
+            destino2.removeAllItems();
+            destino2.addItem("--Destino--");
+            destino2.addItem("Sede");
+        }
+        else if(destino1.getSelectedIndex() == 2){
+            List<Filial> filiais = DadosAplicacao.INSTANCE.getFiliais();
+            destino2.setEnabled(true);
+            destino2.removeAllItems();
+            destino2.addItem("--Destino--");
+            for (Filial filial : filiais) {
+                destino2.addItem(filial.nome);
+            }
+        }
+        else{
+            destino2.setEnabled(false);
+            destino2.removeAllItems();
+            destino2.addItem("--Destino--");
+        }
+    }//GEN-LAST:event_destino1ActionPerformed
+
+    private void veiculoMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veiculoMarcaActionPerformed
+        veiculoModelo.setEnabled(true);
+        veiculoModelo.removeAllItems();
+        veiculoModelo.addItem("--Modelo--");
+        for (Veiculo veiculo : veiculos) {
+            if(veiculoMarca.getSelectedItem() == veiculo.marca){
+                veiculoModelo.addItem(veiculo.modelo);
+            }
+        }
+        if (veiculoMarca.getSelectedIndex()==0){
+            veiculoModelo.setEnabled(false);
+            veiculoModelo.removeAllItems();
+            veiculoModelo.addItem("--Modelo--");
+        }
+
+    }//GEN-LAST:event_veiculoMarcaActionPerformed
+
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         boolean erro = false;
 
         String txtNomeText = txtNome.getText();
@@ -332,7 +403,7 @@ public class RegistarPeca extends javax.swing.JFrame {
 
         if(!erro) {
             Peca peca = new Peca(txtNomeText,txtRefText,txtMarcaText,quantidade,destino2.getSelectedItem()+"",veiculoMarca.getSelectedItem()+"/"+veiculoModelo.getSelectedItem());
-            if(DadosAplicacao.INSTANCE.adicionarPeca(peca)){
+            if(DadosAplicacao.INSTANCE.editarPeca(peca)){
                 setVisible(false);
                 dispose();
                 return;
@@ -340,47 +411,8 @@ public class RegistarPeca extends javax.swing.JFrame {
             throwMessageError("Peça. Peça já inserida");
         }
 
-    }//GEN-LAST:event_btnRegistarActionPerformed
+    }//GEN-LAST:event_btnConfirmarActionPerformed
 
-    private void destino1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_destino1ActionPerformed
-        if (destino1.getSelectedIndex() == 1){
-            destino2.setEnabled(true);
-            destino2.removeAllItems();
-            destino2.addItem("--Destino--");
-            destino2.addItem("Sede");
-        }
-        else if(destino1.getSelectedIndex() == 2){
-            List<Filial> filiais = DadosAplicacao.INSTANCE.getFiliais();
-            destino2.setEnabled(true);
-            destino2.removeAllItems();
-            destino2.addItem("--Destino--");
-            for (Filial filial : filiais) {
-                destino2.addItem(filial.nome);
-            }
-        }
-        else{
-            destino2.setEnabled(false);
-            destino2.removeAllItems();
-            destino2.addItem("--Destino--");
-        }
-    }//GEN-LAST:event_destino1ActionPerformed
-
-    private void veiculoMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veiculoMarcaActionPerformed
-        veiculoModelo.setEnabled(true);
-        veiculoModelo.removeAllItems();
-        veiculoModelo.addItem("--Modelo--");
-        for (Veiculo veiculo : veiculos) {
-            if(veiculoMarca.getSelectedItem() == veiculo.marca){
-                veiculoModelo.addItem(veiculo.modelo);
-            }
-        }
-        if (veiculoMarca.getSelectedIndex()==0){
-            veiculoModelo.setEnabled(false);
-            veiculoModelo.removeAllItems();
-            veiculoModelo.addItem("--Modelo--");
-        }
-
-    }//GEN-LAST:event_veiculoMarcaActionPerformed
 
     public void throwMessageError(String message){
         JOptionPane.showMessageDialog(painelRegistarCliente, message,"Error",JOptionPane.ERROR_MESSAGE);
@@ -388,8 +420,8 @@ public class RegistarPeca extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnFechar;
-    private javax.swing.JButton btnRegistar;
     private javax.swing.JComboBox<String> destino1;
     private javax.swing.JComboBox<String> destino2;
     private javax.swing.JLabel jLabel1;

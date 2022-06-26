@@ -7,6 +7,7 @@ package main.java.AutoSell;
 import AutoSell.Clientes.Cliente;
 import AutoSell.DadosAplicacao;
 import AutoSell.Filiais.Filial;
+import AutoSell.Pecas.Peca;
 import AutoSell.Veiculos.Veiculo;
 import main.java.AutoSell.Clientes.Menu_Clientes;
 import main.java.AutoSell.Pecas.Menu_Pecas;
@@ -303,6 +304,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Veiculo veiculo1 = new Veiculo("10-ZE-20","Golf","Volkswagen","José Manuel",2,"Gasóleo",false,"");
         Veiculo veiculo2 = new Veiculo("25-XX-10","Caddy","Volkswagen","José António",1,"Gasolina",false,"");
         Veiculo veiculo3 = new Veiculo("00-AA-00","Ibiza","Seat","Manuel António",5,"Gasóleo",true,"");
+        Peca peca1 = new Peca("Volante","123456789","bosch",2,"Sede",veiculo1.marca+"/"+veiculo1.modelo);
+        Peca peca2 = new Peca("Acelarador","111111111","3M",6,filial1.nome,veiculo2.marca+"/"+veiculo2.modelo);
+        Peca peca3 = new Peca("Colunas ","112222222","JVC",10,filial2.nome,veiculo3.marca+"/"+veiculo3.modelo);
         DadosAplicacao.INSTANCE.adicionarCliente(cliente1);
         DadosAplicacao.INSTANCE.adicionarCliente(cliente2);
         DadosAplicacao.INSTANCE.adicionarCliente(cliente3);
@@ -311,6 +315,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         DadosAplicacao.INSTANCE.adicionarVeiculo(veiculo1);
         DadosAplicacao.INSTANCE.adicionarVeiculo(veiculo2);
         DadosAplicacao.INSTANCE.adicionarVeiculo(veiculo3);
+        DadosAplicacao.INSTANCE.adicionarPeca(peca1);
+        DadosAplicacao.INSTANCE.adicionarPeca(peca2);
+        DadosAplicacao.INSTANCE.adicionarPeca(peca3);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

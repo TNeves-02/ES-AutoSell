@@ -7,6 +7,8 @@ public class Peca {
     public int quantidade;
     public String destino;
     public String veiculo;
+    public String quantSede;
+    public String quantFilial;
 
     public Peca(String nome, String referencia, String marca, int quantidade, String destino, String veiculo) {
         this.nome = nome;
@@ -14,6 +16,14 @@ public class Peca {
         this.marca = marca;
         this.quantidade = quantidade;
         this.destino = destino;
+        if (destino.equals("Sede")){
+            quantSede= quantidade+"/"+destino;
+            quantFilial = "0";
+        }
+        else {
+            quantSede= "0";
+            quantFilial = quantidade+"/"+destino;
+        }
         this.veiculo = veiculo;
     }
 
@@ -30,6 +40,14 @@ public class Peca {
     }
 
     public void setDestino(String destino) {
+        if (destino.equals("Sede")){
+            quantSede= quantidade+"/"+destino;
+            quantFilial = "0";
+        }
+        else {
+            quantSede= "0";
+            quantFilial = quantidade+"/"+destino;
+        }
         this.destino = destino;
     }
 
@@ -60,4 +78,6 @@ public class Peca {
     public String getVeiculo() {
         return veiculo;
     }
+
+
 }

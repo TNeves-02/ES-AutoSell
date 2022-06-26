@@ -130,6 +130,26 @@ public class DadosAplicacao {
     }
 
     public LinkedList<Peca> getPecas() {
-        return new LinkedList<>(pecas);
+        return pecas;
+    }
+
+    public void eliminarPeca(int index) {
+        pecas.remove(index);
+    }
+
+    public boolean editarPeca(Peca peca) {
+        if (peca == null){
+            return false;
+        }
+        for (Peca peca1 : pecas) {
+            if (peca1.getReferencia().equals(peca.getReferencia())) {
+                peca1.setNome(peca.getNome());
+                peca1.setMarca(peca.getMarca());
+                peca1.setDestino(peca.getDestino());
+                peca1.setQuantidade(peca.getQuantidade());
+                peca1.setVeiculo(peca.getVeiculo());
+            }
+        }
+        return true;
     }
 }

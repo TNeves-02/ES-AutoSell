@@ -5,6 +5,15 @@
 package main.java.AutoSell.Pecas;
 
 
+import AutoSell.DadosAplicacao;
+import AutoSell.Pecas.Peca;
+import main.java.AutoSell.Pecas.VisualizarPeca;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.List;
 
 /**
  *
@@ -17,6 +26,7 @@ public class VisualizarPecas extends javax.swing.JFrame {
      */
     public VisualizarPecas() {
         initComponents();
+        VisualizarPecas(DadosAplicacao.INSTANCE.getPecas());
     }
 
     /**
@@ -33,7 +43,7 @@ public class VisualizarPecas extends javax.swing.JFrame {
         btnFechar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblClientes = new javax.swing.JTable();
+        tblPecas = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
         setResizable(false);
@@ -59,7 +69,7 @@ public class VisualizarPecas extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(141, 141, 141));
 
-        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
+        tblPecas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -70,7 +80,7 @@ public class VisualizarPecas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tblClientes);
+        jScrollPane1.setViewportView(tblPecas);
 
         jButton1.setText("Filtrar");
 
@@ -135,6 +145,56 @@ public class VisualizarPecas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void VisualizarPecas(List<Peca> pecas) {
+        DefaultTableModel modelotabela = new DefaultTableModel();
+
+        tblPecas.setModel(modelotabela);
+        modelotabela.addColumn("Ref");
+        modelotabela.addColumn("Nome");
+        modelotabela.addColumn("Marca");
+        modelotabela.addColumn("Carro");
+        modelotabela.addColumn("Quant Filial/Filial");
+        modelotabela.addColumn("Quant Sede");
+        modelotabela.addColumn("Eliminar");
+
+
+        for (Peca peca : pecas){
+            String quantfil ;
+            String quantsede;
+
+            modelotabela.addRow(new Object[]{
+                    peca.referencia,
+                    peca.nome,
+                    peca.marca,
+                    peca.veiculo,
+                    peca.quantFilial,
+                    peca.quantSede,
+                    "X"
+            });
+        }
+
+        //duplo click
+        tblPecas.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent mouseEvent) {
+                JTable table =(JTable) mouseEvent.getSource();
+                Point point = mouseEvent.getPoint();
+                int row = table.rowAtPoint(point);
+                if (mouseEvent.getClickCount() == 2 && table.getSelectedRow() != -1) {
+                    if (table.getSelectedColumn() >=0 && table.getSelectedColumn() <=5){
+                       VisualizarPeca  janela = new VisualizarPeca(pecas.get(row).getReferencia(),pecas.get(row).getNome(),pecas.get(row).getMarca(),pecas.get(row).quantSede,pecas.get(row).quantFilial,pecas.get(row).veiculo);
+                        janela.setVisible(true);
+                    }
+                    if (table.getSelectedColumn() == 6 ){
+                        int reply = JOptionPane.showConfirmDialog(null, "Deseja Eliminar?", "Eliminar", JOptionPane.YES_NO_OPTION);
+                        if (reply == JOptionPane.YES_OPTION) {
+                            DadosAplicacao.INSTANCE.eliminarPeca(row);
+                        }
+                    }
+
+                }
+            }
+        });
+    }
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
         setVisible(false);
         dispose();
@@ -147,6 +207,6 @@ public class VisualizarPecas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblClientes;
+    private javax.swing.JTable tblPecas;
     // End of variables declaration//GEN-END:variables
 }
