@@ -44,7 +44,7 @@ public class VisualizarPecas extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPecas = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        btnFiltrar = new javax.swing.JButton();
 
         setResizable(false);
         setSize(new java.awt.Dimension(600, 400));
@@ -82,7 +82,12 @@ public class VisualizarPecas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblPecas);
 
-        jButton1.setText("Filtrar");
+        btnFiltrar.setText("Filtrar");
+        btnFiltrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFiltrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -94,14 +99,14 @@ public class VisualizarPecas extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(btnFiltrar)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(btnFiltrar)
                 .addGap(3, 3, 3)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -200,9 +205,14 @@ public class VisualizarPecas extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnFecharActionPerformed
 
+    private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
+        main.java.AutoSell.Pecas.FiltrarPecas janela = new main.java.AutoSell.Pecas.FiltrarPecas();
+        janela.setVisible(true);
+    }//GEN-LAST:event_btnFiltrarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFechar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnFiltrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
