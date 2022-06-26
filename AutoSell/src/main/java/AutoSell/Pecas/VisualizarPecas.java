@@ -164,8 +164,6 @@ public class VisualizarPecas extends javax.swing.JFrame {
 
 
         for (Peca peca : pecas){
-            String quantfil ;
-            String quantsede;
 
             modelotabela.addRow(new Object[]{
                     peca.referencia,

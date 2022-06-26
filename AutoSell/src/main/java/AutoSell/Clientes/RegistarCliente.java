@@ -250,8 +250,8 @@ public class RegistarCliente extends javax.swing.JFrame {
         String txtMoradaText = txtMorada.getText();
         String txtCodPostal3Text = txtCodPostal3.getText();
         //Validar  Nome
-        if (txtNome == null || txtNomeText.length() <2){
-            throwMessageError("Nome inválido. O nome deve conter pelo menos 2 carateres não-brancos");
+        if (txtNome == null || txtNomeText.length() <2|| !txtNomeText.matches("^[a-zA-Z\\s]+$")){
+            throwMessageError("Nome inválido. O nome deve conter pelo menos 2 carateres não-brancos e apenas caracteres");
             erro=true;
         }
         //Validar  Telefone

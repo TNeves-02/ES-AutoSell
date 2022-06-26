@@ -261,8 +261,8 @@ public class EditarFilial extends javax.swing.JFrame {
         String txtMoradaText = txtMorada.getText();
         String txtCodPostal3Text = txtCodPostal3.getText();
         //Validar  Nome
-        if (txtNome == null || txtNomeText.length() <2){
-            throwMessageError("Nome inválido. O nome deve conter pelo menos 2 carateres não-brancos");
+        if (txtNome == null || txtNomeText.length() <2 || !txtNomeText.matches("^[a-zA-Z\\s]+$")){
+            throwMessageError("Nome inválido. O nome deve conter pelo menos 2 carateres não-brancos e apenas letras");
             erro=true;
         }
         //Validar  Telefone
@@ -297,8 +297,8 @@ public class EditarFilial extends javax.swing.JFrame {
         }
 
         //Validar Gerente
-        if(txtGerente == null || txtGerenteText.length()<2){
-            throwMessageError("Gerente inválido. O nome do gerente deve conter pelo menos 2 carateres não-brancos");
+        if(txtGerente == null || txtGerenteText.length()<2 || !txtGerenteText.matches("^[a-zA-Z\\s]+$")){
+            throwMessageError("Gerente inválido. O nome do gerente deve conter pelo menos 2 carateres não-brancos e apenas letras");
             erro = true;
         }
         if(!erro) {
