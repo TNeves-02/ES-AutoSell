@@ -5,6 +5,7 @@
 package main.java.AutoSell.Filiais;
 
 import main.java.AutoSell.Filiais.VisualizarFiliais;
+import main.java.AutoSell.Filiais.RegistarFilial;
 
 /**
  *
@@ -119,7 +120,8 @@ public class Menu_Filiais extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistarFilialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistarFilialActionPerformed
-        // TODO add your handling code here:
+        RegistarFilial janela = new RegistarFilial();
+        janela.setVisible(true);
     }//GEN-LAST:event_btnRegistarFilialActionPerformed
 
     private void btnVisualizarFiliaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarFiliaisActionPerformed

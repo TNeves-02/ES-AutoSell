@@ -5,6 +5,16 @@
 package main.java.AutoSell.Filiais;
 
 
+import AutoSell.DadosAplicacao;
+import AutoSell.Filiais.Filial;
+
+import main.java.AutoSell.Filiais.VisualizarFilial;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.List;
 
 /**
  *
@@ -17,6 +27,7 @@ public class VisualizarFiliais extends javax.swing.JFrame {
      */
     public VisualizarFiliais() {
         initComponents();
+        VisualizarFiliais(DadosAplicacao.INSTANCE.getFiliais());
     }
 
     /**
@@ -33,7 +44,7 @@ public class VisualizarFiliais extends javax.swing.JFrame {
         btnFechar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblClientes = new javax.swing.JTable();
+        tblFiliais = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
         setResizable(false);
@@ -59,7 +70,7 @@ public class VisualizarFiliais extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(141, 141, 141));
 
-        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
+        tblFiliais.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -70,7 +81,7 @@ public class VisualizarFiliais extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tblClientes);
+        jScrollPane1.setViewportView(tblFiliais);
 
         jButton1.setText("Filtrar");
 
@@ -135,6 +146,52 @@ public class VisualizarFiliais extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void VisualizarFiliais(List<Filial> filiais) {
+        DefaultTableModel modelotabela = new DefaultTableModel();
+
+        tblFiliais.setModel(modelotabela);
+        modelotabela.addColumn("Nome");
+        modelotabela.addColumn("Telefone");
+        modelotabela.addColumn("Email");
+        modelotabela.addColumn("Morada");
+        modelotabela.addColumn("Gerente");
+        modelotabela.addColumn("Eliminar");
+
+        for (Filial filial : filiais){
+            modelotabela.addRow(new Object[]{
+                    filial.nome,
+                    filial.telefone,
+                    filial.email,
+                    filial.morada,
+                    filial.gerente,
+                    "X"
+            });
+        }
+
+        //duplo click
+        tblFiliais.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent mouseEvent) {
+                JTable table =(JTable) mouseEvent.getSource();
+                Point point = mouseEvent.getPoint();
+                int row = table.rowAtPoint(point);
+                if (mouseEvent.getClickCount() == 2 && table.getSelectedRow() != -1) {
+                    if (table.getSelectedColumn() >=0 && table.getSelectedColumn() <=4){
+                        System.out.println("Visualizar");
+                         VisualizarFilial janela = new VisualizarFilial(filiais.get(row).getNome(),filiais.get(row).getTelefone(),filiais.get(row).getEmail(),filiais.get(row).getMorada(),filiais.get(row).codPostal,filiais.get(row).gerente);
+                        janela.setVisible(true);
+                    }
+                    if (table.getSelectedColumn() == 5 ){
+                        int reply = JOptionPane.showConfirmDialog(null, "Deseja Eliminar?", "Eliminar", JOptionPane.YES_NO_OPTION);
+                        if (reply == JOptionPane.YES_OPTION) {
+                            System.out.println("Eliminar");
+                            DadosAplicacao.INSTANCE.eliminarFilial(row);
+                        }
+                    }
+
+                }
+            }
+        });
+    }
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
         setVisible(false);
         dispose();
@@ -149,6 +206,6 @@ public class VisualizarFiliais extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblClientes;
+    private javax.swing.JTable tblFiliais;
     // End of variables declaration//GEN-END:variables
 }
