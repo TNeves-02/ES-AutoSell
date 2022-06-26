@@ -68,8 +68,10 @@ public class Menu_Manutencoes extends javax.swing.JFrame {
         btnRegistarVeiculos.setBackground(new java.awt.Color(0, 0, 0));
         btnRegistarVeiculos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnRegistarVeiculos.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistarVeiculos.setText("Registar Manutenção");
+        btnRegistarVeiculos.setText("<html> Registar <br> Manutenção</html>");
         btnRegistarVeiculos.setToolTipText("");
+        btnRegistarVeiculos.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        btnRegistarVeiculos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRegistarVeiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistarManutencaoActionPerformed(evt);
@@ -79,7 +81,7 @@ public class Menu_Manutencoes extends javax.swing.JFrame {
         btnRegistarVeiculos2.setBackground(new java.awt.Color(0, 0, 0));
         btnRegistarVeiculos2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnRegistarVeiculos2.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistarVeiculos2.setText("Dar Início a Preparação de Veículo");
+        btnRegistarVeiculos2.setText("<html> Dar Início a <br> Preparação de Veículo</html>\n");
         btnRegistarVeiculos2.setToolTipText("");
         btnRegistarVeiculos2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +92,7 @@ public class Menu_Manutencoes extends javax.swing.JFrame {
         btnRegistarVeiculos3.setBackground(new java.awt.Color(0, 0, 0));
         btnRegistarVeiculos3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnRegistarVeiculos3.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistarVeiculos3.setText("Visualizar Histórico de Manutenções");
+        btnRegistarVeiculos3.setText("<html>Visualizar Histórico <br> de Manutenções</html>\n");
         btnRegistarVeiculos3.setToolTipText("");
         btnRegistarVeiculos3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +112,7 @@ public class Menu_Manutencoes extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnRegistarVeiculos2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRegistarVeiculos3, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                        .addComponent(btnRegistarVeiculos3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
                     .addComponent(btnVoltarMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
@@ -121,13 +123,13 @@ public class Menu_Manutencoes extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistarVeiculos, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                    .addComponent(btnRegistarVeiculos2, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                    .addComponent(btnRegistarVeiculos3, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnRegistarVeiculos2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRegistarVeiculos3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                    .addComponent(btnRegistarVeiculos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnVoltarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -138,7 +140,7 @@ public class Menu_Manutencoes extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

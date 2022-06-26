@@ -31,7 +31,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -64,14 +64,14 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnRegistarVeiculos" alignment="3" pref="308" max="32767" attributes="0"/>
-                      <Component id="btnRegistarVeiculos2" alignment="3" pref="308" max="32767" attributes="0"/>
-                      <Component id="btnRegistarVeiculos3" alignment="3" pref="308" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="btnRegistarVeiculos2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnRegistarVeiculos3" alignment="0" pref="308" max="32767" attributes="0"/>
+                      <Component id="btnRegistarVeiculos" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnVoltarMenu" min="-2" pref="33" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -122,8 +122,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Registar Manuten&#xe7;&#xe3;o"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt; Registar &lt;br&gt; Manuten&#xe7;&#xe3;o&lt;/html&gt;"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistarManutencaoActionPerformed"/>
@@ -140,7 +142,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Dar In&#xed;cio a Prepara&#xe7;&#xe3;o de Ve&#xed;culo"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt; Dar In&#xed;cio a &lt;br&gt; Prepara&#xe7;&#xe3;o de Ve&#xed;culo&lt;/html&gt;&#xa;"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
@@ -158,7 +160,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Visualizar Hist&#xf3;rico de Manuten&#xe7;&#xf5;es"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;Visualizar Hist&#xf3;rico &lt;br&gt; de Manuten&#xe7;&#xf5;es&lt;/html&gt;&#xa;"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
