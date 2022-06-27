@@ -145,6 +145,8 @@ public class EditarPeca extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Veiculo Pertencente:");
 
+        txtRef.setEnabled(false);
+
         destino1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Local--", "Sede", "Filial" }));
         destino1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -274,6 +274,9 @@
             <Component class="javax.swing.JTextField" name="txtNome">
             </Component>
             <Component class="javax.swing.JTextField" name="txtRef">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtMarca">
             </Component>

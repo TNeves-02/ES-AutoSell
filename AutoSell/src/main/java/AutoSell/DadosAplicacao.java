@@ -51,6 +51,18 @@ public class DadosAplicacao {
         return true;
     }
 
+    public Veiculo getVeiculo(String matricula) {
+        for (Veiculo veiculo : veiculos) {
+            if (veiculo.getMatricula().equals(matricula)) {
+                return veiculo;
+            }
+        }
+        return null;
+    }
+
+    public void venderVeiculo(Veiculo veiculo) {
+        veiculos.remove(veiculo);
+    }
     //////////////////////////////////Clientes///////////////////////////////////////
     public boolean adicionarCliente(Cliente cliente){
         if(cliente == null ){
@@ -165,7 +177,7 @@ public class DadosAplicacao {
         }
         return true;
     }
-
+    //////////////////////////////////Utilizadores//////////////////////////////////////
     public boolean adicionarSede(Sede sede) {
         if(sede == null || sedes.contains(sede)){
             return false;
@@ -200,7 +212,7 @@ public class DadosAplicacao {
         }
         return null;
     }
-
+    //////////////////////////////////Transacoes///////////////////////////////////////
     public boolean adicionarTransacao(Transacao transacao) {
         if(transacao == null || transacoes.contains(transacao)){
             return false;
@@ -213,19 +225,8 @@ public class DadosAplicacao {
         return new LinkedList<>(transacoes);
     }
 
-    public Veiculo getVeiculo(String matricula) {
-        for (Veiculo veiculo : veiculos) {
-            if (veiculo.getMatricula().equals(matricula)) {
-                return veiculo;
-            }
-        }
-        return null;
-    }
 
-    public void venderVeiculo(Veiculo veiculo) {
-        veiculos.remove(veiculo);
-    }
-
+    //////////////////////////////////Eventos///////////////////////////////////////
     public boolean adicionarEvento(Evento evento)
     {
         if(evento == null || eventos.contains(evento))
