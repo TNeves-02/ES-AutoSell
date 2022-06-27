@@ -15,6 +15,9 @@ import main.java.AutoSell.Filiais.Menu_Filiais;
 import AutoSell.Veiculos.Menu_Veiculos;
 import main.java.AutoSell.Estatisticas.Menu_Estatisticas;
 import AutoSell.Manutencoes.Menu_Manutencoes;
+import main.java.AutoSell.Login;
+import main.java.AutoSell.Transacoes.Menu_Transacoes;
+import main.java.AutoSell.Eventos.Menu_Eventos;
 /**
  *
  * @author Tomas
@@ -227,8 +230,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void fechar(){
+        setVisible(false);
+        dispose();
+    }
+
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        // TODO add your handling code here:
+        Login janela = new Login();
+        janela.setVisible(true);
+        fechar();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnEstatisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstatisticasActionPerformed
@@ -242,11 +252,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFiliaisActionPerformed
 
     private void btnEventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEventosActionPerformed
-        // TODO add your handling code here:
+        Menu_Eventos janela = new Menu_Eventos();
+        janela.setVisible(true);
     }//GEN-LAST:event_btnEventosActionPerformed
 
     private void btnTransacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransacoesActionPerformed
-        // TODO add your handling code here:
+        Menu_Transacoes janela = new Menu_Transacoes();
+        janela.setVisible(true);
     }//GEN-LAST:event_btnTransacoesActionPerformed
 
     private void btnManutencaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManutencaoActionPerformed
@@ -296,55 +308,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        Cliente cliente1 = new Cliente("Tomás Neves","9669999999","2201747@my.ipleiria.pt","9999999990","R.Louriçal","3105-170 Louriçal");
-        Cliente cliente2 = new Cliente("David Marques","9669555555","2201748@my.ipleiria.pt","153757701","R.Matas","3050-200 Matas");
-        Cliente cliente3 = new Cliente("Rodrigo Domingues","966966666","2191173@my.ipleiria.pt","259376566","R.Leiria","3100-100 Leiria");
-        Cliente cliente4 = new Cliente("Toze Menuel","966343456","email@gmail.com","280043910","R.Comibra","2500-200 Coimbra");
-        Cliente cliente5 = new Cliente("Henrique Ferreira","966243267","teste@gemial.com","276517962","R.Lisboa","4100-150 Lisboa");
-
-
-        Filial filial1 = new Filial("Auto Pombal","964444444","autoPombal@gmail.com","R.Pombal","3400-140 Pombal","Manuel António");
-        Filial filial2 = new Filial("Auto Figueira","967575758","autoFigueira@gmail.com","R.Figueira","3759-042 Figueira","José Manuel");
-        Filial filial3 = new Filial("Auto Leiria","965050504","autoLeiria@gmail.com","R.Leiria","2400-213 Leiria","Gabriel Ferreira");
-        Filial filial4 = new Filial("Auto Algarve","961234567","autoAlgarve@gmail.com","R.Algarve","3008-430 Algarve","João Fernandes");
-        Filial filial5 = new Filial("Auto Viseu","912345678","autoViseu@gmail.com","R.Viseu","2500-115 Viseu","Tiago Alexandre");
-
-        Veiculo veiculo1 = new Veiculo("10-ZE-20","Golf","Volkswagen","José Manuel",2,"Gasóleo",false,"");
-        Veiculo veiculo2 = new Veiculo("25-XX-10","Caddy","Volkswagen","José António",1,"Gasolina",false,"");
-        Veiculo veiculo3 = new Veiculo("00-AA-00","Ibiza","Seat","Manuel António",5,"Gasóleo",true,"");
-        Veiculo veiculo4 = new Veiculo("50-ZE-99","Clio","Renault","João Pedro",3,"Gasolina",false,"");
-        Veiculo veiculo5 = new Veiculo("60-ZA-42","80","Audi","Tiago Manuel",3,"Gasóleo",false,"");
-
-        Peca peca1 = new Peca("Volante","123456789","Bosch",2,"Sede",veiculo1.marca+"/"+veiculo1.modelo);
-        Peca peca2 = new Peca("Acelarador","111111111","3M",6,filial1.nome,veiculo2.marca+"/"+veiculo2.modelo);
-        Peca peca3 = new Peca("Colunas ","112222222","JVC",10,filial2.nome,veiculo3.marca+"/"+veiculo3.modelo);
-        Peca peca4 = new Peca("Puxador ","232521597","Renault",5,"Sede",veiculo4.marca+"/"+veiculo4.modelo);
-        Peca peca5 = new Peca("Jante ","847569697","BBS",4,filial5.nome,veiculo5.marca+"/"+veiculo5.modelo);
-
-
-        DadosAplicacao.INSTANCE.adicionarCliente(cliente1);
-        DadosAplicacao.INSTANCE.adicionarCliente(cliente2);
-        DadosAplicacao.INSTANCE.adicionarCliente(cliente3);
-        DadosAplicacao.INSTANCE.adicionarCliente(cliente4);
-        DadosAplicacao.INSTANCE.adicionarCliente(cliente5);
-
-        DadosAplicacao.INSTANCE.adicionarFilial(filial1);
-        DadosAplicacao.INSTANCE.adicionarFilial(filial2);
-        DadosAplicacao.INSTANCE.adicionarFilial(filial3);
-        DadosAplicacao.INSTANCE.adicionarFilial(filial4);
-        DadosAplicacao.INSTANCE.adicionarFilial(filial5);
-
-        DadosAplicacao.INSTANCE.adicionarVeiculo(veiculo1);
-        DadosAplicacao.INSTANCE.adicionarVeiculo(veiculo2);
-        DadosAplicacao.INSTANCE.adicionarVeiculo(veiculo3);
-        DadosAplicacao.INSTANCE.adicionarVeiculo(veiculo4);
-        DadosAplicacao.INSTANCE.adicionarVeiculo(veiculo5);
-
-        DadosAplicacao.INSTANCE.adicionarPeca(peca1);
-        DadosAplicacao.INSTANCE.adicionarPeca(peca2);
-        DadosAplicacao.INSTANCE.adicionarPeca(peca3);
-        DadosAplicacao.INSTANCE.adicionarPeca(peca4);
-        DadosAplicacao.INSTANCE.adicionarPeca(peca5);
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

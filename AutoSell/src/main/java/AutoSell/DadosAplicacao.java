@@ -1,21 +1,30 @@
 package AutoSell;
 
 import AutoSell.Clientes.Cliente;
+import AutoSell.Eventos.Evento;
 import AutoSell.Filiais.Filial;
 import AutoSell.Pecas.Peca;
+import AutoSell.Sede.Sede;
+import AutoSell.Transacoes.Transacao;
+import AutoSell.Utilizadores.Utilizador;
 import AutoSell.Veiculos.Veiculo;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class DadosAplicacao {
     public static DadosAplicacao INSTANCE = new DadosAplicacao();
 
     private final LinkedList<Cliente> clientes;
     private final LinkedList<Filial> filiais;
+    private final LinkedList<Sede> sedes;
+    private final LinkedList<Utilizador> utilizadores;
     private final LinkedList<Veiculo> veiculos;
     private final LinkedList<Peca> pecas;
+    private final LinkedList<Transacao> transacoes;
+    private final LinkedList<Evento> eventos;
 
 
 
@@ -24,6 +33,10 @@ public class DadosAplicacao {
         filiais = new LinkedList<>();
         veiculos = new LinkedList<>();
         pecas = new LinkedList<>();
+        sedes = new LinkedList<>();
+        utilizadores = new LinkedList<>();
+        transacoes = new LinkedList<>();
+        eventos = new LinkedList<>();
     }
 
     //////////////////////////////////Veiculos///////////////////////////////////////
@@ -151,5 +164,113 @@ public class DadosAplicacao {
             }
         }
         return true;
+    }
+
+    public boolean adicionarSede(Sede sede) {
+        if(sede == null || sedes.contains(sede)){
+            return false;
+        }
+        for (Sede sede1 : sedes) {
+            if (sede1.getNome().equals(sede.getNome())) {
+                return false;
+            }
+        }
+        sedes.add(sede);
+        return true;
+    }
+
+    public boolean adicionarUtilizador(Utilizador utilizador) {
+        if(utilizador == null || utilizadores.contains(utilizador)){
+            return false;
+        }
+        for (Utilizador user : utilizadores) {
+            if (user.getUsername().equals(utilizador.getUsername())) {
+                return false;
+            }
+        }
+        utilizadores.add(utilizador);
+        return true;
+    }
+
+    public Utilizador getUtilizador(String username) {
+        for (Utilizador utilizador : utilizadores) {
+            if (utilizador.getUsername().equals(username)) {
+                return utilizador;
+            }
+        }
+        return null;
+    }
+
+    public boolean adicionarTransacao(Transacao transacao) {
+        if(transacao == null || transacoes.contains(transacao)){
+            return false;
+        }
+        transacoes.add(transacao);
+        return true;
+    }
+
+    public List<Transacao> getTransacoes() {
+        return new LinkedList<>(transacoes);
+    }
+
+    public Veiculo getVeiculo(String matricula) {
+        for (Veiculo veiculo : veiculos) {
+            if (veiculo.getMatricula().equals(matricula)) {
+                return veiculo;
+            }
+        }
+        return null;
+    }
+
+    public void venderVeiculo(Veiculo veiculo) {
+        veiculos.remove(veiculo);
+    }
+
+    public boolean adicionarEvento(Evento evento)
+    {
+        if(evento == null || eventos.contains(evento))
+        {
+            return false;
+        }
+        eventos.add(evento);
+        return true;
+    }
+
+    public List<Evento> getEventos() {
+        return new LinkedList<>(eventos);
+    }
+
+    public Evento getEvento(String nome)
+    {
+        for (Evento evento : eventos){
+            if (evento.getNome().equals(nome)) {
+                return evento;
+            }
+        }
+        return null;
+    }
+
+    public LinkedList<Evento> getEventosDiponiveis() {
+        LinkedList<Evento> even = new LinkedList<>();
+        for (Evento evento : eventos)
+        {
+            if(evento.getEstado().equals("Pendente"))
+            {
+                even.add(evento);
+            }
+        }
+        return even;
+    }
+
+    public boolean cancelarEvento(String nomeEvento) {
+        for (Evento evento : eventos)
+        {
+            if(evento.getEstado().equals("Pendente") && evento.getNome().equals(nomeEvento))
+            {
+                evento.setEstado("Cancelado");
+                return true;
+            }
+        }
+        return false;
     }
 }
